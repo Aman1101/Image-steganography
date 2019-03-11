@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="beans.dto">
+    <class name="LogMaster" table="log_master">
+        <id name="sno">
+            <generator class="increment"/>
+        </id>
+        <property name="inputImage">
+            <column name="inputImage" sql-type="mediumblob"/>
+        </property>
+        <property name="encodedImage">
+            <column name="encodedImage" sql-type="mediumblob"/>
+        </property>
+        <property name="secretMessage_Orignal">
+            <column name="secretMessage_Orignal" sql-type="longtext"/>
+        </property>
+        <property name="secretMessage_Rendered">
+            <column name="secretMessage_Rendered" sql-type="longtext"/>
+        </property>
+        
+        <property name="paraphrase">
+            <column name="paraphrase" sql-type="longtext" />
+        </property>
+        
+        <property name="coordinates_xy">
+            <column name="coordinates_xy" sql-type="longblob" />
+        </property>
+        <property name="dateCreated"/>
+    </class>
+</hibernate-mapping>
